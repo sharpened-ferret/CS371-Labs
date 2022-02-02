@@ -25,10 +25,12 @@ int main(int argc , char *argv[]) {
 		return -1;
 	}
 	
-	int values[MAX_TABLE_SIZE];
+	// int values[MAX_TABLE_SIZE];
+	int *values = (int*) malloc(MAX_TABLE_SIZE * sizeof(int)); 
 	generateTable(num, values);
 	printTable(num, values);
 	
+	free(values);
 	return 0;
 }
 
