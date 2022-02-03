@@ -13,21 +13,19 @@ void generateTable(int num, int *table);
 void printTable(int num, int *table);
 
 int main(int argc , char *argv[]) {
-	if (argc != 2) {
-		printf("%s <num>\n where <num> is an integer between 0 and 12\n", argv[0]);
-		return -1;
+
+	int *tables[MAX_TABLE_SIZE];
+
+	int i;
+	for (i = 0; i < MAX_TABLE_SIZE; i++) {
+		tables[i] = (int*) malloc(MAX_TABLE_SIZE * sizeof(int));
 	}
 
-	int num = atoi(argv[1]);
-	if (num < 0 || num > 12) {
-		printf("Invalid number size! Must be between 0 and 12.\n");
-		return -1;
+	printTables(tables);
+
+	i = 0; 
+	for (i = 0; i < MAX_TABLE_SIZE; i++) {
+		free(tables[i]);
 	}
-	
-	int *values = (int*) malloc(MAX_TABLE_SIZE * sizeof(int)); 
-	generateTable(num, values);
-	printTable(num, values);
-	
-	free(values);
 	return 0;
 }
