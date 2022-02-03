@@ -19,11 +19,11 @@ int main(int argc , char *argv[]) {
 	int i;
 	for (i = 0; i < MAX_TABLE_SIZE; i++) {
 		tables[i] = (int*) malloc(MAX_TABLE_SIZE * sizeof(int));
+		generateTable(i, tables[i]);
 	}
 
 	printTables(tables);
 
-	i = 0; 
 	for (i = 0; i < MAX_TABLE_SIZE; i++) {
 		free(tables[i]);
 	}

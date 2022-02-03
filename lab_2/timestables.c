@@ -1,5 +1,6 @@
 # include <stdio.h>
 # include "timestables.h"
+# include "arrays.h"
 
 void generateTable(int num, int *table) {
 	int i;
@@ -15,6 +16,8 @@ void printTable(int num, int *table) {
 		printf("%-2d * %-2d = %d\n", num, i, *(table+i));
 	}
 	printf("\n");
+	double meanValue = mean(MAX_TABLE_SIZE, table);
+	printf("The mean for this table is %f\n\n", meanValue);
 }
 
 // This function takes a pointer to a pointer 'tables' (effectively a 2d array of ints)
