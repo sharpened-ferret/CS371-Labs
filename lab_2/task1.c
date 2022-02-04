@@ -31,6 +31,7 @@ int main(int argc , char *argv[]) {
 	printTable(num, values);
 	
 	free(values);
+	values =
 	return 0;
 }
 
