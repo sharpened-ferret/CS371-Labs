@@ -34,3 +34,13 @@ void destructConstituency(struct Constituency * const obj) {
     obj->neighbours = NULL;
     obj->numNeighbours = 0;
 }
+
+struct Constituency * copyConstituencies(struct Constituency * constituencies, const int numConstituencies) {
+    struct Constituency * returnConstituencies = malloc(sizeof(struct Constituency) * numConstituencies);
+    int i;
+    for (int i = 0; i < numConstituencies; i++) {
+        struct Constituency tempConstit = constituencies[i];
+        constructConstituency(&returnConstituencies[i], tempConstit.name, tempConstit.neighbours, tempConstit.numNeighbours);
+    }
+    return returnConstituencies;
+}
