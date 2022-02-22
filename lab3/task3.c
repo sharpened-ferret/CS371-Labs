@@ -63,7 +63,6 @@ int main() {
       minNeighbours = constituencies[i].numNeighbours;
       lowest = i;
     }
-    // printConstituency(&curr);
   }
 
   struct Constituency * copy = copyConstituencies(constituencies, numConstituencies);
