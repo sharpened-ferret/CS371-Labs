@@ -14,7 +14,7 @@ const int numConstituencies = 5;
 
 int main() {
   
-  struct Constituency constituencies[5];
+  struct Constituency constituencies[numConstituencies];
 
   constructConstituency(
     &constituencies[0],
