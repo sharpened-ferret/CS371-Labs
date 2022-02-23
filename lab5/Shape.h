@@ -15,10 +15,6 @@ public:
     std::string to_string() const override;
     void centre_at(double x, double y) override;
 
-
-public:
-
-
 private:
     double x, y, r;
 };
