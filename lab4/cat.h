@@ -7,6 +7,7 @@
 class Cat {
 private:
 public:
+    Cat();
     Cat(std::string name);
     Cat(std::string name, unsigned int lives);
     virtual ~Cat();

@@ -1,6 +1,11 @@
 #include <iostream>
 #include "cat.h"
 
+Cat::Cat() {
+    std::cout << "Default constructor called...\n";
+    this->name = "Tom";
+    this->lives = 9;
+}
 
 Cat::Cat(std::string name):name(name), lives(9) {
     std::cout << "Constructor called with name: " << name << "\n";
