@@ -4,13 +4,14 @@
 int main(int argc, char* argv[]) {
     if (argc > 1) {
         const int numArgs = argc - 1;
-        const int numCats = numArgs / 2;
+        const int numCats = (numArgs + 1) / 2;
+        std::cout << numCats;
 
         Cat *cats = new Cat[numCats]();
         int currCat = 0;
         for (int i = 1; i < argc; i += 2) {
             cats[currCat].set_name(argv[i]);
-            if (i+1 <= argc) {
+            if (i+1 < argc-1) {
                 cats[currCat].set_lives(atoi(argv[i+1]));
                 currCat++;
             }
