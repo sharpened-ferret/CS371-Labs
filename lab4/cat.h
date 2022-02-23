@@ -12,9 +12,9 @@ public:
     virtual ~Cat();
 
     std::string get_name() const;
-    void set_name(std::string name);
     unsigned int get_lives() const;
-    void set_lives(unsigned int lives);
+    void set_name(const std::string &name);
+    void set_lives(const unsigned int &lives);
 
 private:
     std::string name;
