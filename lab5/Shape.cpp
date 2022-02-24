@@ -88,3 +88,7 @@ std::string Triangle::to_string() const {
         << "), (" << this->x2 << ", " << this->y2 << ")] with side lengths " << std::endl;
     return std::string();
 }
+
+void Triangle::centre_at(double x, double y) {
+
+}
