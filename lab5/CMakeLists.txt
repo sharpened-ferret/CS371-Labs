@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(lab5-1 task1.cpp Shape.cpp Shape.h)
 add_executable(lab5-2 task2.cpp Shape.cpp Shape.h)
+add_executable(lab5-3 task3.cpp Shape.cpp Shape.h)

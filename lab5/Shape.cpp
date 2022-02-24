@@ -72,3 +72,19 @@ void Rectangle::centre_at(double x, double y) {
     this->y0 += change_y;
     this->y1 += change_y;
 }
+
+Triangle::Triangle(double x0, double y0, double x1, double y1, double x2, double y2) {
+    this->x0 = x0;
+    this->x1 = x1;
+    this->x2 = x2;
+    this->y0 = y0;
+    this->y1 = y1;
+    this->y2 = y2;
+}
+
+std::string Triangle::to_string() const {
+    std::stringstream sstr;
+    sstr << "Triangle at [(" << this->x0 << ", " << this->y0 << "), (" << this->x1 << ", " << this->y1
+        << "), (" << this->x2 << ", " << this->y2 << ")] with side lengths " << std::endl;
+    return std::string();
+}

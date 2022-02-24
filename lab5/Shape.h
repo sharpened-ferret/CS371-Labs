@@ -29,4 +29,14 @@ private:
     double x0, x1, y0, y1; // Stores x and y of top left and bottom right corners
 };
 
+class Triangle: public Shape {
+public:
+    Triangle(double x0, double y0, double x1, double y1, double x2, double y2);
+    std::string to_string() const override;
+    void centre_at(double x, double y) override;
+
+private:
+    double x0, x1, x2, y0, y1, y2;
+};
+
 #endif //LAB5_SHAPE_H
