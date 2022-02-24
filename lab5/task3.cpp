@@ -16,9 +16,6 @@ int main(int argc, char *argv[]) {
 
     delete x;
 
-//    Shape *tri = new Triangle(0, 0, 1, 1, 0, 1);
-//    std::cout << tri->to_string() << std::endl;
-
     Shape **xs = new Shape*[10];
     xs[0] = new Circle(0,0,1);
     xs[1] = new Triangle(0, 0, 1, 1, 0, 1);
@@ -44,6 +41,8 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < 10; i++) {
         std::cout<<xs[i]->to_string();
     }
+
+    delete[] xs;
 
     return 0;
 }
