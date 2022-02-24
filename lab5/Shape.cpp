@@ -1,6 +1,7 @@
 #include "Shape.h"
 #include <sstream>
 #include <iostream>
+#include <cmath>
 
 Circle::Circle(double x, double y, double r) : x(x), y(y), r(r) {
     this->x = x;
@@ -83,12 +84,25 @@ Triangle::Triangle(double x0, double y0, double x1, double y1, double x2, double
 }
 
 std::string Triangle::to_string() const {
+    double length1 = sqrt(pow((x0-x1),2) + pow((y0-y1),2));
+    double length2 = sqrt(pow((x0-x2),2) + pow((y0-y2),2));
+    double length3 = sqrt(pow((x1-x2),2) + pow((y1-y2),2));
+
     std::stringstream sstr;
     sstr << "Triangle at [(" << this->x0 << ", " << this->y0 << "), (" << this->x1 << ", " << this->y1
-        << "), (" << this->x2 << ", " << this->y2 << ")] with side lengths " << std::endl;
-    return std::string();
+        << "), (" << this->x2 << ", " << this->y2 << ")] with side lengths " << length1 << ", "
+            << length2 << ", and " << length3  << "..." << std::endl;
+    return sstr.str();
 }
 
 void Triangle::centre_at(double x, double y) {
+    double x_shift = ((x0 + x1 + x2) / 3) - x;
+    double y_shift = ((y0 + y1 + y2) / 3) - y;
 
+    this->x0 += x_shift;
+    this->x1 += x_shift;
+    this->x2 += x_shift;
+    this->y0 += y_shift;
+    this->y1 += y_shift;
+    this->y2 += y_shift;
 }
