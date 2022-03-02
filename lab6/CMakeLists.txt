@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(lab6-1 task1.cpp cat.cpp)
 add_executable(lab6-2 task2.cpp cat.cpp)
+add_executable(lab6-3 task3.cpp cat.cpp)

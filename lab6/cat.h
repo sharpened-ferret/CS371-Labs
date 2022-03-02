@@ -15,6 +15,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Cat& cat);
     friend bool operator==(const Cat& lhs, const Cat& rhs);
+    friend bool operator<(const Cat& lhs, const Cat& rhs);
 
     std::string get_name() const;
     unsigned int get_lives() const;

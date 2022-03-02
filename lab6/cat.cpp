@@ -45,13 +45,25 @@ void Cat::set_lives(const unsigned int &lives) {
 }
 
 std::ostream& operator<<(std::ostream &os, const Cat &cat) {
-    os << cat.name << " has " << cat.lives << " lives..." << std::endl;
+    os << cat.name << " has " << cat.lives << " lives...";
     return os;
 }
 
 bool operator==(const Cat &lhs, const Cat& rhs) {
     if (lhs.name == rhs.name) {
         if (lhs.lives == rhs.lives) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool operator<(const Cat &lhs, const Cat& rhs) {
+    if (lhs.name < rhs.name) {
+        return true;
+    }
+    if (lhs.name == rhs.name) {
+        if (lhs.lives < rhs.lives) {
             return true;
         }
     }
