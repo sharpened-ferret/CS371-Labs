@@ -43,3 +43,8 @@ void Cat::set_lives(const unsigned int &lives) {
     }
     Cat::lives = lives;
 }
+
+std::ostream& operator<<(std::ostream &os, const Cat &cat) {
+    os << "{Cat: name=" << cat.name << ", lives=" << cat.lives << "}" << std::endl;
+    return os;
+}

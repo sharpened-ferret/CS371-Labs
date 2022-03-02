@@ -12,6 +12,8 @@ public:
     Cat(std::string name, unsigned int lives);
     virtual ~Cat();
 
+    friend std::ostream &operator<<(std::ostream &os, const Cat& cat);
+
     std::string get_name() const;
     unsigned int get_lives() const;
     void set_name(const std::string &name);
