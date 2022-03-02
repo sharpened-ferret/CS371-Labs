@@ -14,6 +14,7 @@ public:
     virtual ~Cat();
 
     friend std::ostream &operator<<(std::ostream &os, const Cat& cat);
+    friend bool operator==(const Cat& lhs, const Cat& rhs);
 
     std::string get_name() const;
     unsigned int get_lives() const;
@@ -32,7 +33,7 @@ namespace std {
             stringstream hs;
             hs << obj;
             unsigned int hash = std::hash<std::string>{}(hs.str());
-            return hash;
+            return static_cast<size_t>(hash);
         }
     };
 }

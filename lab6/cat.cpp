@@ -8,10 +8,10 @@ Cat::Cat() {
 }
 
 Cat::Cat(std::string name):name(name), lives(9) {
-    std::cout << "Constructor called with name: " << name << "\n";
+    std::cout << "Constructor called with name: " << name << std::endl;
 }
 Cat::Cat(std::string name, unsigned int lives):name(name), lives(lives) {
-    std::cout << "Constructor called with name: " << name << " and lives: " << lives << "\n";
+    std::cout << "Constructor called with name: " << name << " and lives: " << lives << std::endl;
 }
 
 Cat::~Cat() {
@@ -47,4 +47,13 @@ void Cat::set_lives(const unsigned int &lives) {
 std::ostream& operator<<(std::ostream &os, const Cat &cat) {
     os << cat.name << " has " << cat.lives << " lives..." << std::endl;
     return os;
+}
+
+bool operator==(const Cat &lhs, const Cat& rhs) {
+    if (lhs.name == rhs.name) {
+        if (lhs.lives == rhs.lives) {
+            return true;
+        }
+    }
+    return false;
 }
